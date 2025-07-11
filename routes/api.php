@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ImportController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VendorController;
 
@@ -40,4 +41,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/products/{id}', [ProductController::class, 'show']);
     Route::put('/products/{id}', [ProductController::class, 'update']);
     Route::delete('/products/{id}', [ProductController::class, 'destroy']);
+
+    Route::post('/products/import', [ImportController::class, 'import']);
 });
